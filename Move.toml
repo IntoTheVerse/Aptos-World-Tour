@@ -1,0 +1,18 @@
+[package]
+name = "AptosHackGame"
+version = "1.0.0"
+license = "MIT"
+authors = []
+
+[addresses]
+publisher = "_"
+
+[dev-addresses]
+publisher = "0x42"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "devnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
