@@ -5,9 +5,6 @@ license = "MIT"
 authors = []
 
 [addresses]
-publisher = "_"
-
-[dev-addresses]
 publisher = "0x42"
 
 [dependencies.AptosFramework]
