@@ -1,7 +1,9 @@
-module publisher::dungeon_player
+module publisher::raiders_player
 {
     use std::signer;
     use std::string::{String};
+    use publisher::raiders_characters;
+    use publisher::raiders_weapons;
 
     // structs
 
@@ -32,11 +34,16 @@ module publisher::dungeon_player
     public entry fun create_user(account: signer, username: String)
     {
         assert_user_does_not_exist(signer::address_of(&account));
+
         move_to(&account, User {
             username,
             score: 0,
             level_index: 0
         });
+        raiders_characters::create_collection(&account);
+        raiders_weapons::create_collection(&account);
+        raiders_characters::mint_character(&account, 0);
+        raiders_weapons::mint_weapon(&account, 0);
     }
 
     public entry fun change_username(account: signer, username: String) acquires User

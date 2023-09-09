@@ -1,4 +1,4 @@
-module publisher::dungeon_token
+module publisher::raiders_token
 {
     use aptos_framework::fungible_asset::{Self, MintRef, TransferRef, BurnRef, Metadata, FungibleStore};
     use aptos_framework::object::{Self, Object};
@@ -7,7 +7,7 @@ module publisher::dungeon_token
     use std::option;
 
     const EINVALID_MINT: u64 = 1;
-    const ASSET_SYMBOL: vector<u8> = b"DUN";
+    const ASSET_SYMBOL: vector<u8> = b"RDR";
 
     #[resource_group_member(group = aptos_framework::object::ObjectGroup)]
     struct ManagedFungibleAsset has key 
@@ -23,7 +23,7 @@ module publisher::dungeon_token
         primary_fungible_store::create_primary_store_enabled_fungible_asset(
             constructor_ref,
             option::none(),
-            utf8(b"Dungeon Token"),
+            utf8(b"Raider Token"),
             utf8(ASSET_SYMBOL),
             0,
             utf8(b"https://bafkreia3ju7pg4a2wi2ieeempnrhfvwzokt6avbs5kcmliuzbpifg2zqa4.ipfs.dweb.link/"),
