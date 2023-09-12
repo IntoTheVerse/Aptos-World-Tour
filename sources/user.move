@@ -1,9 +1,9 @@
-module publisher::raiders_player
+module publisher::aptos_raiders_player
 {
     use std::signer;
     use std::string::{String};
-    use publisher::raiders_characters;
-    use publisher::raiders_weapons;
+    use publisher::aptos_raiders_characters;
+    use publisher::aptos_raiders_weapons;
 
     // structs
 
@@ -40,10 +40,10 @@ module publisher::raiders_player
             score: 0,
             level_index: 0
         });
-        raiders_characters::create_collection(&account);
-        raiders_weapons::create_collection(&account);
-        raiders_characters::mint_character(&account, 0);
-        raiders_weapons::mint_weapon(&account, 0);
+        aptos_raiders_characters::create_collection(&account);
+        aptos_raiders_weapons::create_collection(&account);
+        aptos_raiders_characters::mint_character(&account, 0, 0);
+        aptos_raiders_weapons::mint_weapon(&account, 0, 0);
     }
 
     public entry fun change_username(account: signer, username: String) acquires User
